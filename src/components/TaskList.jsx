@@ -70,7 +70,7 @@ export default function TaskList() {
   const updateTask = async (updatedTask) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/tasks/${updatedTask.id}`,
+        `http://54.213.24.98:8080/api/tasks/${updatedTask.id}`,
         {
           method: "PUT",
           headers: {
@@ -97,7 +97,7 @@ export default function TaskList() {
   const deleteTask = async (taskId) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/tasks/${taskId}`,
+        `http://54.213.24.98:8080/api/tasks/${taskId}`,
         {
           method: "DELETE",
           headers: {
