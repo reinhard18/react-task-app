@@ -26,7 +26,7 @@ export default function Login() {
 
     try {
       const response = await fetch(
-        "http://35.163.133.176:8080https://quintessential-laurice-reze-22a4126d.koyeb.app/api/login",
+        "https://quintessential-laurice-reze-22a4126d.koyeb.app/api/login",
         {
           method: "POST",
           headers: {
