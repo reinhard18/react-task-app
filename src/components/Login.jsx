@@ -25,13 +25,16 @@ export default function Login() {
     };
 
     try {
-      const response = await fetch("http://54.213.24.98:8080/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "http://35.163.133.176:8080https://quintessential-laurice-reze-22a4126d.koyeb.app/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Invalid credentials");

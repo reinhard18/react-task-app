@@ -21,11 +21,14 @@ export default function TaskList() {
     console.log("TaskList - Fetching tasks");
     const fetchTasks = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/tasks", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await fetch(
+          "https://quintessential-laurice-reze-22a4126d.koyeb.app/api/tasks",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         if (!response.ok) {
           throw new Error(`Failed to fetch tasks: ${response.status}`);
         }
@@ -47,14 +50,17 @@ export default function TaskList() {
 
   const createTask = async (newTask) => {
     try {
-      const response = await fetch("http://localhost:8080/api/tasks", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(newTask),
-      });
+      const response = await fetch(
+        "https://quintessential-laurice-reze-22a4126d.koyeb.app/api/tasks",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(newTask),
+        }
+      );
       if (!response.ok) {
         throw new Error(`Failed to create task: ${response.status}`);
       }
@@ -70,7 +76,7 @@ export default function TaskList() {
   const updateTask = async (updatedTask) => {
     try {
       const response = await fetch(
-        `http://54.213.24.98:8080/api/tasks/${updatedTask.id}`,
+        `https://quintessential-laurice-reze-22a4126d.koyeb.app/api/tasks/${updatedTask.id}`,
         {
           method: "PUT",
           headers: {
@@ -97,7 +103,7 @@ export default function TaskList() {
   const deleteTask = async (taskId) => {
     try {
       const response = await fetch(
-        `http://54.213.24.98:8080/api/tasks/${taskId}`,
+        `https://quintessential-laurice-reze-22a4126d.koyeb.app/api/tasks/${taskId}`,
         {
           method: "DELETE",
           headers: {
