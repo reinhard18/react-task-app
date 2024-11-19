@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider, useAuth } from "./context/AuthContext";
@@ -30,7 +30,7 @@ const PublicRoute = ({ children }) => {
   const { token, isLoading } = useAuth();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>;
   }
 
   return token ? <Navigate to="/" replace /> : children;
